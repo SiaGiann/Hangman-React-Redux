@@ -1,0 +1,35 @@
+.letters {
+    display: flex;
+    flex-wrap: wrap; /*otan teliosei i seira tha paei apo katw*/
+}
+
+.letter {
+    width: 7%; /*to get 13 letters per line*/
+    background-color: #5b6066;
+    -webkit-border-radius: 5; /*chrome,safari*/
+    -moz-border-radius: 5; /*mozilla*/
+    border-radius: 5; /*edge-opera*/
+    font-family: Courier New; /*kathe gramma se afto to font (monospace) pianei ton idio xoro*/
+    color: #ffffff;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin: 1px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.letter:hover {
+    background-color: #195f8a;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.disable {
+    background-color: #d1d1d1;
+}
+
+.disable:hover {
+    background-color: #d1d1d1;
+    cursor: not-allowed;
+}
