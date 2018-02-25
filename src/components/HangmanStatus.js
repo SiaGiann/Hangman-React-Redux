@@ -4,15 +4,17 @@ import './HangmanStatus.css';
 
 class HangmanStatus extends Component {
     static propTypes = {
-        wrongGuesses: PropTypes.number.isRequired
+        gameCondition: PropTypes.number.isRequired
     }
     render() {
-        const { wrongGuesses } = this.props;
-        const message = wrongGuesses > 5 ? 'game over' : 'please select a letter...';
-        const gameStatus = wrongGuesses > 5 ? 'lostGame' : 'inGame';
+        const gameMessages = ["Please select a letter", "Congrats, you won!", "Game Over..."];
+        const gameCssClass = ["inGame", "wonGame", "lostGame"];
+        const { gameCondition } = this.props;
+        const message = gameMessages[gameCondition]; //to pernei apo to HangmanApp to condition
+        const cssClass = gameCssClass[gameCondition]; //to idio
         return (
             <div>
-                <p className={`message ${gameStatus}`}>{message}</p>
+                <p className={`message ${cssClass}`}>{message}</p>
             </div>
         )
     }
