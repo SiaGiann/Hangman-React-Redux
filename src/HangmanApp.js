@@ -3,6 +3,7 @@ import './HangmanApp.css';
 import HangmanIcon from './components/HangmanIcon';
 import HangmanWord from './components/HangmanWord';
 import HangmanLetters from './components/HangmanLetters';
+import HangmanStatus from './components/HangmanStatus';
 
 class HangmanApp extends Component {
   render() {
@@ -11,6 +12,7 @@ class HangmanApp extends Component {
         <HangmanIcon wrongGuesses={0} />
         <HangmanWord word={'developer'} letters={['e', 'v']} />
         <HangmanLetters letters={['e', 'v']} />
+        <HangmanStatus wrongGuesses={0} />
       </div>
     );
   }
