@@ -30,7 +30,6 @@ class HangmanLetters extends Component {
         const { letters } = this.props;
         const letterButtons = allLetters.map(letter => (
             <button
-                className='letter'
                 className={`letter${letters.includes(letter) ? " disable" : ""}`}
                 key={letter}
                 name={letter}

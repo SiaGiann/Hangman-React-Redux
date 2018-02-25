@@ -13,10 +13,10 @@ class HangmanApp extends Component {
             letters: []
         }
 
-        this.guessLetter = this.guessLetter.bind(this); //to kanoume afto oste to this entos tis guessLetter na simenei this.HangmanApp kai oxi this.HangmanLetters
+        this.addLetterToState = this.addLetterToState.bind(this); //to kanoume afto oste to this entos tis addLetterToState na simenei this.HangmanApp kai oxi this.HangmanLetters
     }
 
-    guessLetter(letter) {
+    addLetterToState(letter) {
         const letters = [...this.state.letters, letter];
         this.setState({letters})
     }
@@ -28,7 +28,7 @@ class HangmanApp extends Component {
             <div className="HangmanApp">
                 <HangmanIcon wrongGuesses={wrongGuesses} />
                 <HangmanWord word={word} letters={letters} />
-                <HangmanLetters letters={letters} onClick={this.guessLetter} />
+                <HangmanLetters letters={letters} onClick={this.addLetterToState} />
                 <HangmanStatus wrongGuesses={wrongGuesses} />
             </div>
         );
