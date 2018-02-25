@@ -3,8 +3,19 @@ import PropTypes from 'prop-types';
 import './HangmanLetters.css';
 
 class HangmanLetters extends Component {
+    constructor(props) {
+        super(props);
+
+        this.guessLetter = this.guessLetter.bind(this);
+    }
+
     static propTypes = {
-        letters: PropTypes.arrayOf(PropTypes.string)
+        letters: PropTypes.arrayOf(PropTypes.string),
+        onClick: PropTypes.func
+    }
+
+    guessLetter(e) {
+        this.props.onClick(e.target.name);
     }
 
     render() {
@@ -22,7 +33,9 @@ class HangmanLetters extends Component {
                 className='letter'
                 className={`letter${letters.includes(letter) ? " disable" : ""}`}
                 key={letter}
+                name={letter}
                 disabled={letters.includes(letter)}
+                onClick={this.guessLetter}
             >{ letter }</button>
         ));
         return (
