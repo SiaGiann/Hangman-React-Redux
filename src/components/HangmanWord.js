@@ -9,8 +9,6 @@ class HangmanWord extends Component {
     }
 
     render() {
-        // const word = this.props.word;
-        // const letters = this.props.letters;
         const { word, letters } = this.props;
         const displayWord = word.split('').map(letter => (letters.includes(letter) ? letter : "_")).join(" ");
         return (

@@ -5,6 +5,7 @@ import HangmanIcon from './components/HangmanIcon';
 import HangmanWord from './components/HangmanWord';
 import HangmanLetters from './components/HangmanLetters';
 import HangmanStatus from './components/HangmanStatus';
+import HangmanReset from './components/HangmanReset';
 
 class HangmanApp extends Component {
 
@@ -13,13 +14,16 @@ class HangmanApp extends Component {
         const wrongGuesses = letters.filter(letter => !word.split("").includes(letter)).length;
         const gameIsWon = word.split("").filter(letter => letters.includes(letter)).length === word.split("").length;
         const gameIsActive = !gameIsWon && wrongGuesses < 6;
+        // [0: Active, 1: Win, 2: Lose]
         const gameCondition = gameIsActive ? 0 : (gameIsWon ? 1 : 2);
         return (
             <div className="HangmanApp">
+                <h1 className="title"><span className="red">HANG</span>MAN</h1>
                 <HangmanIcon wrongGuesses={wrongGuesses} />
                 <HangmanWord word={word} letters={letters} />
                 <HangmanLetters letters={letters} gameHasEnded={!gameIsActive}/>
-                <HangmanStatus gameCondition={gameCondition} />
+                <HangmanStatus gameCondition={gameCondition} word={word} />
+                <HangmanReset />
             </div>
         );
     }

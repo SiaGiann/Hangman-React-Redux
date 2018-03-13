@@ -7,13 +7,16 @@ import './index.css';
 import HangmanApp from './HangmanApp';
 import registerServiceWorker from './registerServiceWorker';
 
+const randomWords = require('random-words');
+
 const state = {
-    word: 'developer',
+    word: randomWords(),
     letters: []
 }
 
 const store = createStore(rootReducer, state);
 
+//kanei diathesimo to store apo oli tin efarmogi mas
 ReactDOM.render(
     <Provider store={store}>
         <HangmanApp />

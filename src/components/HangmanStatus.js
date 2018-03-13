@@ -7,9 +7,9 @@ class HangmanStatus extends Component {
         gameCondition: PropTypes.number.isRequired
     }
     render() {
-        const gameMessages = ["Please select a letter", "Congrats, you won!", "Game Over..."];
+        const { gameCondition, word } = this.props;
+        const gameMessages = ["Please select a letter", "Congrats, you won!", "Game Over! The word was " + word];
         const gameCssClass = ["inGame", "wonGame", "lostGame"];
-        const { gameCondition } = this.props;
         const message = gameMessages[gameCondition]; //to pernei apo to HangmanApp to condition
         const cssClass = gameCssClass[gameCondition]; //to idio
         return (

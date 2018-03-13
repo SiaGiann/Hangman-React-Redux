@@ -23,7 +23,6 @@ class HangmanLetters extends Component {
             <button
                 className={`letter${letters.includes(letter) || gameHasEnded ? " disable" : ""}`}
                 key={letter}
-                name={letter}
                 disabled={letters.includes(letter) || gameHasEnded}
                 onClick={() => guessLetter(letter)}
             >{ letter }</button>
