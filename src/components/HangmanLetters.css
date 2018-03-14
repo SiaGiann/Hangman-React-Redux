@@ -6,9 +6,9 @@
 .letter {
     width: 7%; /*to get 13 letters per line*/
     background-color: #5b6066;
-    -webkit-border-radius: 5; /*chrome,safari*/
-    -moz-border-radius: 5; /*mozilla*/
-    border-radius: 5; /*edge-opera*/
+    -webkit-border-radius: 5px; /*chrome,safari*/
+    -moz-border-radius: 5px; /*mozilla*/
+    border-radius: 5px; /*edge-opera*/
     font-family: Courier New; /*kathe gramma se afto to font (monospace) pianei ton idio xoro*/
     color: #ffffff;
     padding-top: 14px;

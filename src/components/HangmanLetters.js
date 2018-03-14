@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './HangmanLetters.css';
 
 class HangmanLetters extends Component {
-    constructor(props) {
-        super(props);
-
-        this.guessLetter = this.guessLetter.bind(this);
-    }
-
     static propTypes = {
         letters: PropTypes.arrayOf(PropTypes.string),
-        onClick: PropTypes.func
-    }
-
-    guessLetter(e) {
-        this.props.onClick(e.target.name);
+        gameHasEnded: PropTypes.bool.isRequired
     }
 
     render() {
@@ -27,14 +18,13 @@ class HangmanLetters extends Component {
             'y', 'z'
         ];
 
-        const { letters } = this.props;
+        const { letters, guessLetter, gameHasEnded } = this.props;
         const letterButtons = allLetters.map(letter => (
             <button
-                className={`letter${letters.includes(letter) ? " disable" : ""}`}
+                className={`letter${letters.includes(letter) || gameHasEnded ? " disable" : ""}`}
                 key={letter}
-                name={letter}
-                disabled={letters.includes(letter)}
-                onClick={this.guessLetter}
+                disabled={letters.includes(letter) || gameHasEnded}
+                onClick={() => guessLetter(letter)}
             >{ letter }</button>
         ));
         return (
@@ -43,7 +33,10 @@ class HangmanLetters extends Component {
             </div>
         );
     }
-
 }
 
-export default HangmanLetters;
+const mapDispatchToProps = (dispatch) => ({
+    guessLetter: (letter) => (dispatch({type: "GUESS_LETTER", letter: letter}))
+});
+
+export default connect(null, mapDispatchToProps) (HangmanLetters);
