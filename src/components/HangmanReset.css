@@ -1,15 +1,21 @@
 .rst-button {
-  background-color: #ffffff;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  color: #4a4a4a;
-  font-size: 18px;
-  padding: 10px 20px;
-  border: solid #4a4a4a 2px;
+  background: #cf4736;
+  background-image: -webkit-linear-gradient(top, #cf4736, #706b67);
+  background-image: -moz-linear-gradient(top, #cf4736, #706b67);
+  background-image: -ms-linear-gradient(top, #cf4736, #706b67);
+  background-image: -o-linear-gradient(top, #cf4736, #706b67);
+  background-image: linear-gradient(to bottom, #cf4736, #706b67);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #f5faf6;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
   text-decoration: none;
 }
 
 .rst-button:hover {
-  background-color: #f5f5f5;
+  background: #acb0b3;
+  text-decoration: none;
 }
